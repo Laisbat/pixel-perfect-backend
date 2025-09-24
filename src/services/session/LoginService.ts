@@ -32,12 +32,16 @@ export class LoginService {
 
     const accessToken = sign(payload, env.ACCESS_TOKEN_SECRET, {
       subject: usuario.cod.toString(),
-      expiresIn: `${env.ACCESS_TOKEN_EXPIRATION}s`,
+      expiresIn: env.ACCESS_TOKEN_EXPIRATION
+        ? `${env.ACCESS_TOKEN_EXPIRATION}s`
+        : '360s',
     });
 
     const refreshToken = sign(payload, env.REFRESH_TOKEN_SECRET, {
       subject: usuario.cod.toString(),
-      expiresIn: `${env.REFRESH_TOKEN_EXPIRATION}s`,
+      expiresIn: env.REFRESH_TOKEN_EXPIRATION
+        ? `${env.REFRESH_TOKEN_EXPIRATION}s`
+        : '600s',
     });
 
     if (usuario.is_primeiro_acesso)
