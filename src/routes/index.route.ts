@@ -19,6 +19,6 @@ router.get('/', function (req, res, next) {
 
 router.use('/posts', IsAuthenticated, postsRoutes);
 router.use('/session', sessionRoutes);
-router.use('/users', userRoutes);
+router.use('/users', IsAuthenticated, userRoutes);
 
 export default router;
