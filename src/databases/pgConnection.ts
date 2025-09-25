@@ -1,5 +1,5 @@
-import knex from "knex";
-import env from "../configs/env";
+import knex from 'knex';
+import env from '../configs/env';
 /**
  * Configuração da conexão com o banco de dados PostgreSQL usando Knex.js.
  *
@@ -13,6 +13,7 @@ const pgConnection = knex({
     user: env.DB_USER,
     database: env.DB_NAME,
     password: env.DB_PASSWORD,
+    ssl: { rejectUnauthorized: false },
   },
 });
 
