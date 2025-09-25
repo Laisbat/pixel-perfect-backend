@@ -7,7 +7,9 @@ CREATE TABLE blog.usuarios(
 	nome VARCHAR(255) NOT NULL,
 	email VARCHAR(100) NOT NULL UNIQUE,
 	senha VARCHAR(255) NOT NULL,
+    bio VARCHAR(255) DEFAULT NULL,
 	is_admin BOOLEAN DEFAULT FALSE,
+    is_primeiro_acesso BOOLEAN DEFAULT TRUE,
 	is_ativo BOOLEAN DEFAULT TRUE,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT NULL
@@ -24,10 +26,4 @@ CREATE TABLE blog.posts(
 	updated_at TIMESTAMP DEFAULT NULL
 );
 
-/**
-* Insert iniciais
-*/
-INSERT INTO blog.usuarios
-(nome, login, senha, is_primeiro_acesso, is_admin, is_ativo, created_at)
-VALUES('Suporte', 'suporte@pixel.com',
-'$2a$08$0wtNVjnFrsd/XeI/N6qN8Oc.JH.skwdIakx57oDgdOoRLAPcf42Sq', true, true, true, now());
+select * FROM blog.usuarios;

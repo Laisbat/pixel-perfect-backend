@@ -20,7 +20,6 @@ export class SessionController {
   }
   public async recoverPassword(req: Request, res: Response): Promise<Response> {
     try {
-      const { login } = req.body;
       return res.status(200).json({ message: 'Senha enviada com sucesso!' });
     } catch (err) {
       logger.error(err);
