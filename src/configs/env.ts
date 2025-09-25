@@ -18,4 +18,17 @@ const envSchema = z.object({
   REFRESH_TOKEN_EXPIRATION: z.coerce.number().nullable().default(600),
 });
 
-export default envSchema.parse(process.env);
+export default envSchema.parse({
+  NODE_ENV: 'development',
+  APP_PORT: 3003,
+  DATABASE_CLIENT: 'pg',
+  DB_HOST: 'db.yzrfmcdlnjnkiycogrgw.supabase.co',
+  DB_PORT: 6543,
+  DB_USER: 'postgres',
+  DB_NAME: 'postgres',
+  DB_PASSWORD: 'QzIfQQmBVI8EihFE',
+
+  ACCESS_TOKEN_SECRET: 'iusahiuasdhidihudihu',
+  REFRESH_TOKEN_SECRET: 'oasioasouasdouasouhsa',
+  ACCESS_TOKEN_EXPIRATION: 15,
+});
