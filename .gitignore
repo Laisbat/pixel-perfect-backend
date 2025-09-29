@@ -4,6 +4,8 @@ dist/
 build/
 .history
 
+.gitkeep
+
 #VSCODE FILES
 .vscode
 

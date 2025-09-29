@@ -18,6 +18,9 @@ const envSchema = z.object({
   REFRESH_TOKEN_EXPIRATION: z.coerce.number().nullable().default(600),
 });
 
+// Para rodar localmente
+// export default envSchema.parse(process.env);
+
 export default envSchema.parse({
   NODE_ENV: 'development',
   APP_PORT: 3003,
